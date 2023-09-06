@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.detail.DetailFragment">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/top_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:backgroundTint="@color/colorPrimary">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:layout_width="match_parent"
+                    android:id="@+id/toolbar"
+                    android:layout_height="match_parent"
+                    app:title="META.COM"
+                    app:titleTextAppearance="@style/interBoldHeader"
+                    app:titleCentered="true"
+                    app:menu="@menu/detail_menu"
+                    app:navigationIcon="@drawable/ic_back" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/top_app_bar">
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/bg_thumb"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_171sdp"
+                    android:layout_marginStart="0dp">
+
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_newsThumbnail"
+                        android:scaleType="centerCrop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:src="@drawable/bg_image" />
+
+                    <ImageView
+                        android:id="@+id/ic_camera"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_camera" />
+
+
+
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bg_thumb"
+                    android:layout_centerHorizontal="true"
+                    style="@style/interBoldHeader"
+                    android:textColor="@color/dark2" />
+                <RelativeLayout
+                    android:id="@+id/bg_newsDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_below="@id/bg_thumb"
+                    android:layout_marginBottom="@dimen/_8sdp">
+
+                    <TextView
+                        android:id="@+id/tv_newsCategory"
+                        style="@style/interBold12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/yellow" />
+
+                    <TextView
+                        android:id="@+id/tv_newsTitle"
+                        style="@style/headline1"
+                        android:textColor="@color/dark2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_newsCategory"
+                        android:layout_marginTop="@dimen/_4sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_newsCreatedDate"
+                        style="@style/body12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_newsTitle"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:textColor="@color/dark2" />
+
+                    <View
+                        android:id="@+id/Separator"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/tv_newsCreatedDate"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:background="@color/dark2" />
+
+                    <TextView
+                        android:id="@+id/tv_description"
+                        style="@style/body12"
+                        android:textColor="@color/dark2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/Separator"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        />
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</layout>

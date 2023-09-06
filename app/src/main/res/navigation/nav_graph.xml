@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="desriel.kiki.newsapp.ui.main.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="desriel.kiki.newsapp.ui.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="newsId"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/popularFragment"
+        android:name="desriel.kiki.newsapp.ui.main.popular.PopularFragment"
+        android:label="fragment_popular"
+        tools:layout="@layout/fragment_popular" />
+    <fragment
+        android:id="@+id/topicFragment"
+        android:name="desriel.kiki.newsapp.ui.main.topic.TopicFragment"
+        android:label="fragment_topic"
+        tools:layout="@layout/fragment_topic" />
+    <activity
+        android:id="@+id/detailActivity"
+        android:name="desriel.kiki.newsapp.ui.detail.DetailActivity"
+        android:label="DetailActivity" >
+        <argument
+            android:name="newsId"
+            app:argType="string"
+            app:nullable="true" />
+    </activity>
+</navigation>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.main.popular.PopularFragment">
+
+
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+    <TextView
+        android:id="@+id/tv_popularHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/PopularTextTitle"
+        style="@style/interBold10"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:textColor="@color/dark2"
+        android:layout_marginTop="@dimen/_18sdp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_popular"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_popularHeader"
+        tools:listitem="@layout/popular_item"/>
+</RelativeLayout>

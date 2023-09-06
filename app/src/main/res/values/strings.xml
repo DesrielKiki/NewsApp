@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+
+    <string name="loading">Loading…</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet. Et ipsa maiores qui esse fuga et blanditiis dolorum qui quam aperiam qui libero galisum. A perferendis perferendis sed esse porro et consequatur consequatur nam dicta eveniet et voluptates atque. Aut fugiat labore in officiis cumque ad corporis harum et quia voluptate!Id ipsum illum eum totam veritatis non assumenda similique id pariatur quisquam. Vel architecto possimus in excepturi omnis ut adipisci dolor.Eum modi deleniti ex corporis possimus est magnam exercitationem et soluta incidunt sit totam saepe. Nam aliquam rerum et consequatur rerum rem debitis nihil non nihil nemo. Aut iusto nihil ad voluptatem reprehenderit ut voluptatibus officiis et culpa nemo non rerum voluptate. Quo debitis assumenda et dignissimos numquam qui quasi repellendus.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile_menu">profile</string>
+    <string name="notification_menu">notification</string>
+    <string name="bookmark">bookmark</string>
+    <string name="share">share</string>
+    <string name="search_menu">Search</string>
+    <string name="PopularTextTitle">Popular This Week :</string>
+</resources>

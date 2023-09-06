@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginBottom="@dimen/_15sdp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_popNumber"
+        style="@style/interBold12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_17sdp"
+        android:text="#1"
+        android:textColor="@color/dark2" />
+
+    <RelativeLayout
+        android:id="@+id/bg_content"
+        android:layout_width="@dimen/_308sdp"
+        android:layout_height="@dimen/_76sdp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/_36sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@drawable/bg_outline">
+
+        <TextView
+            android:id="@+id/tv_popTitle"
+            style="@style/interBold10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:layout_alignParentStart="true"
+            android:maxLines="3"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_toStartOf="@id/bg_thumb"
+            android:text="Keluarga sambo sampaikan bahwa lesti bilar pasangan yang serasi karna selalu bergandeng badan"
+            android:textColor="@color/dark2" />
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="wrap_content"
+            style="@style/inter8"
+            android:textColor="@color/dark2"
+            android:text="meqi news - 4 jam yang lalu"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_height="wrap_content"/>
+        <RelativeLayout
+            android:id="@+id/bg_thumb"
+            android:layout_width="@dimen/_83sdp"
+            android:layout_height="@dimen/_76sdp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true">
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_newsThumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/bg_image" />
+
+            <ImageView
+                android:id="@+id/ic_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_camera" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.topic.TopicFragment">
+
+    <TextView
+        android:id="@+id/tv_popularTopic_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Popular Topic : "
+        android:textColor="@color/dark2"
+        style="@style/interBold10"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_18sdp"/>
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_below="@id/tv_popularTopic_header">
+        <com.google.android.material.chip.Chip
+            android:layout_width="@dimen/_76sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/bg_chip"
+            android:text="sepak bola"/>
+        <com.google.android.material.chip.Chip
+            android:layout_width="@dimen/_76sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:text="politik"/>
+    </com.google.android.material.chip.ChipGroup>
+
+</RelativeLayout>
