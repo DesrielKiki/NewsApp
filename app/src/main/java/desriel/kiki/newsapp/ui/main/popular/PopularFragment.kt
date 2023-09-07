@@ -1,13 +1,12 @@
 package desriel.kiki.newsapp.ui.main.popular
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import desriel.kiki.newsapp.R
 import desriel.kiki.newsapp.databinding.FragmentPopularBinding
 import desriel.kiki.newsapp.model.NewsResponse
 import desriel.kiki.newsapp.ui.MainViewModel
@@ -22,7 +21,7 @@ class PopularFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentPopularBinding.inflate(inflater, container, false)
 
@@ -39,7 +38,8 @@ class PopularFragment : Fragment() {
         viewModel.getNewsData()
 
         viewModel.isLoading.observe(viewLifecycleOwner) {
-            if (it) binding.tvStatus.text = resources.getString(R.string.loading)
+            if (it) binding.shimmerContainer.visibility = View.VISIBLE
+            if (it) binding.shimmerContainer.startShimmer()
         }
         viewModel.isError.observe(viewLifecycleOwner) {
             if (it) {
@@ -48,6 +48,7 @@ class PopularFragment : Fragment() {
         }
         viewModel.newsData.observe(viewLifecycleOwner) {
             binding.tvStatus.visibility = View.INVISIBLE
+            binding.shimmerContainer.visibility = View.GONE
             setupRecyclerView(it)
         }
 

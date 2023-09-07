@@ -3,79 +3,63 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="newsData"
             type="desriel.kiki.newsapp.model.NewsData" />
     </data>
 
-    <RelativeLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_10sdp">
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_8sdp">
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/bg_content"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/bg_thumb"
-            android:layout_alignStart="@+id/bg_thumb"
-            android:layout_alignEnd="@+id/bg_thumb"
-            android:layout_marginTop="-21dp"
             android:background="@drawable/bg_list"
-            android:paddingTop="25dp">
-
-            <TextView
-                android:id="@+id/tv_newsTitle"
-                style="@style/interBold12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:maxLines="2"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:text="Seorang nenek Tobrut telah merajalela, penyebab utamanya karena pabrowo kalah suara menjadi presiden
-" />
-
-            <TextView
-                android:id="@+id/tv_newsCategory"
-                style="@style/inter8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_newsTitle"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:text="Meqi news - 5 menit yang lalu" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/bg_thumb"
-            android:layout_width="@dimen/_308sdp"
-            android:layout_height="@dimen/_157sdp"
-            android:layout_marginStart="@dimen/_25sdp"
-            android:layout_marginEnd="@dimen/_25sdp">
-
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_newsThumbnail"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:scaleType="centerCrop"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/bg_image" />
+            android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/ic_camera"
+                android:id="@+id/iv_newsThumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_157sdp"
+                android:background="@color/dark2"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:src="@drawable/ic_camera" />
 
+                android:orientation="vertical">
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/tv_newsTitle"
+                    style="@style/interBold12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:maxLines="2"/>
+                <TextView
+                    android:id="@+id/tv_newsInfo"
+                    style="@style/inter8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_newsTitle"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:text="Meta news - 5 menit yang lalu" />
+            </LinearLayout>
+        </LinearLayout>
 
-
-    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 </layout>
 

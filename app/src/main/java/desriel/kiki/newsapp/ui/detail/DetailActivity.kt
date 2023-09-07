@@ -6,7 +6,6 @@ import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.navArgs
 import com.bumptech.glide.Glide
 import desriel.kiki.newsapp.R
 import desriel.kiki.newsapp.databinding.ActivityDetailBinding
@@ -20,7 +19,6 @@ class DetailActivity : AppCompatActivity() {
 
 
     private val viewModel: MainViewModel by viewModels()
-    private val args by navArgs<DetailActivityArgs>()
     private var newsId: String? = ""
     private lateinit var toolBar: androidx.appcompat.widget.Toolbar
 
@@ -89,7 +87,9 @@ class DetailActivity : AppCompatActivity() {
         viewModel.getDetailData(newsId)
 
         viewModel.isLoading.observe(this) {
-            if (it) binding.tvStatus.text = resources.getString(R.string.loading)
+            if (it) binding.shimmerContainer.visibility = View.VISIBLE
+            if (it) binding.shimmerContainer.startShimmer()
+
         }
         viewModel.isError.observe(this) {
             if (it) {
@@ -100,6 +100,9 @@ class DetailActivity : AppCompatActivity() {
         }
         viewModel.detailData.observe(this) { detailData ->
             binding.tvStatus.visibility = View.INVISIBLE
+            binding.shimmerContainer.visibility = View.GONE
+            binding.shimmerContainer.stopShimmer()
+            binding.ivNewsThumbnail.visibility = View.VISIBLE
             setDetailContent(detailData)
 
         }
@@ -116,7 +119,6 @@ class DetailActivity : AppCompatActivity() {
                 Glide.with(it)
                     .load("https://tamasya.technice.id/${detailData?.thumb}")
                     .into(binding.ivNewsThumbnail)
-                binding.icCamera.visibility = View.INVISIBLE
             }
         }
     }

@@ -6,10 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.tabs.TabLayout
-import desriel.kiki.newsapp.R
 import desriel.kiki.newsapp.databinding.FragmentHomeBinding
 import desriel.kiki.newsapp.model.NewsResponse
 import desriel.kiki.newsapp.ui.MainViewModel
@@ -22,22 +19,16 @@ class HomeFragment : Fragment() {
     private lateinit var newsAdapter: NewsAdapter
     private val viewModel: MainViewModel by viewModels()
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
 
-
         newsAdapter = NewsAdapter()
-
-/*
-        binding.root.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_detailFragment)
-        }
-*/
         binding.rvNewsList.adapter = newsAdapter
         binding.rvNewsList.layoutManager = LinearLayoutManager(context)
         dataProcessing()
@@ -52,15 +43,20 @@ class HomeFragment : Fragment() {
         viewModel.getNewsData()
 
         viewModel.isLoading.observe(viewLifecycleOwner) {
-            if (it) binding.tvStatus.text = resources.getString(R.string.loading)
+            if (it) binding.shimmerContainer.visibility = View.VISIBLE
+            if (it) binding.shimmerContainer.startShimmer()
         }
         viewModel.isError.observe(viewLifecycleOwner) {
             if (it) {
+                binding.rvNewsList.visibility = View.GONE
+                binding.shimmerContainer.visibility = View.GONE
                 binding.tvStatus.text = viewModel.errorMessage
             }
         }
         viewModel.newsData.observe(viewLifecycleOwner) {
             binding.tvStatus.visibility = View.INVISIBLE
+            binding.shimmerContainer.stopShimmer()
+            binding.shimmerContainer.visibility = View.GONE
             setData(it)
         }
 

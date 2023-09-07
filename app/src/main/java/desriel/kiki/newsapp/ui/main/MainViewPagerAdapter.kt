@@ -1,4 +1,4 @@
-package desriel.kiki.newsapp
+package desriel.kiki.newsapp.ui.main
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -7,7 +7,7 @@ import desriel.kiki.newsapp.ui.main.home.HomeFragment
 import desriel.kiki.newsapp.ui.main.popular.PopularFragment
 import desriel.kiki.newsapp.ui.main.topic.TopicFragment
 
-class ViewPagerAdapter(fragmentActivity: FragmentActivity): FragmentStateAdapter(fragmentActivity) {
+class MainViewPagerAdapter(fragmentActivity: FragmentActivity): FragmentStateAdapter(fragmentActivity) {
     override fun getItemCount(): Int {
         return 3
     }
