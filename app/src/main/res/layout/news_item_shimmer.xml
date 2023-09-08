@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="newsData"
+            type="desriel.kiki.newsapp.model.NewsData" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_8sdp">
+
+        <LinearLayout
+            android:id="@+id/bg_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_list"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_newsThumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_157sdp"
+                android:background="@color/dark2"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_newsTitle"
+                    style="@style/interBold12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="@color/dark2"
+                    android:maxLines="1"
+                    android:text="-------------------------------------------"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@color/dark2"/>
+                <TextView
+                    android:id="@+id/tv_newsInfo"
+                    style="@style/interBold12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_newsTitle"
+                    android:background="@color/dark2"
+                    android:textColor="@color/dark2"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:text="Meta news - 5 menit yang lalu" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
+
