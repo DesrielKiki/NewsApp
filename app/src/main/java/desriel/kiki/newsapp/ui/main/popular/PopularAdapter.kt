@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import desriel.kiki.newsapp.databinding.PopularItemBinding
 import desriel.kiki.newsapp.model.NewsData
 import desriel.kiki.newsapp.ui.detail.DetailActivity
+import desriel.kiki.newsapp.util.getTimeAgo
 
 class PopularAdapter :
     androidx.recyclerview.widget.ListAdapter<NewsData, PopularAdapter.ViewHolder>(
@@ -20,7 +21,8 @@ class PopularAdapter :
         RecyclerView.ViewHolder(binding.root) {
             fun bind(newsData: NewsData){
                 binding.tvPopTitle.text = newsData.title
-                val subTitle = "${newsData.newsCategory?.title} - ${newsData.createdAt}"
+                val dateText = newsData.createdAt?.getTimeAgo()
+                val subTitle = "${newsData.newsCategory?.title} - $dateText"
                 binding.tvInfo.text = subTitle
                 Glide.with(binding.root)
                     .load("https://tamasya.technice.id/${newsData.thumb}")

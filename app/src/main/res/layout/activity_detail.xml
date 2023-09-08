@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-    </data>
+    <data></data>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -23,15 +22,14 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.appbar.MaterialToolbar
-                    android:layout_width="match_parent"
                     android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:title="META.COM"
-                    app:titleTextAppearance="@style/interBoldHeader"
-                    app:titleCentered="true"
                     app:menu="@menu/detail_menu"
-                    app:navigationIcon="@drawable/ic_back" />
-
+                    app:title="META.COM"
+                    app:titleCentered="true"
+                    app:navigationIcon="@drawable/ic_back"
+                    app:titleTextAppearance="@style/interBoldHeader" />
             </RelativeLayout>
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -49,15 +47,22 @@
                 <com.facebook.shimmer.ShimmerFrameLayout
                     android:id="@+id/shimmer_container"
                     android:layout_width="match_parent"
-                    android:visibility="gone"
-                    android:layout_height="wrap_content">
-                    <include layout="@layout/detail_shimmer"/>
-                    <include layout="@layout/detail_shimmer"/>
-                    <include layout="@layout/detail_shimmer"/>
-                    <include layout="@layout/detail_shimmer"/>
-                    <include layout="@layout/detail_shimmer"/>
-                    <include layout="@layout/detail_shimmer"/>
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <include layout="@layout/detail_shimmer" />
+
+                    <include layout="@layout/detail_shimmer" />
+
+                    <include layout="@layout/detail_shimmer" />
+
+                    <include layout="@layout/detail_shimmer" />
+
+                    <include layout="@layout/detail_shimmer" />
+
+                    <include layout="@layout/detail_shimmer" />
                 </com.facebook.shimmer.ShimmerFrameLayout>
+
                 <RelativeLayout
                     android:id="@+id/bg_thumb"
                     android:layout_width="match_parent"
@@ -67,7 +72,6 @@
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/iv_newsThumbnail"
-                        android:scaleType="centerCrop"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_171sdp"
                         android:layout_alignParentStart="true"
@@ -75,28 +79,29 @@
                         android:layout_alignParentEnd="true"
                         android:layout_marginStart="0dp"
                         android:layout_marginTop="0dp"
-                        android:visibility="gone"
-                        android:src="@drawable/bg_image" />
-
-
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bg_image"
+                        android:visibility="gone" />
 
 
                 </RelativeLayout>
+
                 <TextView
                     android:id="@+id/tvStatus"
+                    style="@style/interBoldHeader"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/bg_thumb"
                     android:layout_centerHorizontal="true"
-                    style="@style/interBoldHeader"
                     android:textColor="@color/dark2" />
+
                 <RelativeLayout
                     android:id="@+id/bg_newsDetail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/bg_thumb"
                     android:layout_marginStart="@dimen/_8sdp"
                     android:layout_marginEnd="@dimen/_8sdp"
-                    android:layout_below="@id/bg_thumb"
                     android:layout_marginBottom="@dimen/_8sdp">
 
                     <TextView
@@ -109,11 +114,11 @@
                     <TextView
                         android:id="@+id/tv_newsTitle"
                         style="@style/headline1"
-                        android:textColor="@color/dark2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/tv_newsCategory"
-                        android:layout_marginTop="@dimen/_4sdp" />
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:textColor="@color/dark2" />
 
                     <TextView
                         android:id="@+id/tv_newsCreatedDate"
@@ -130,17 +135,17 @@
                         android:layout_height="1dp"
                         android:layout_below="@id/tv_newsCreatedDate"
                         android:layout_marginTop="@dimen/_8sdp"
-                        android:background="@color/dark2" />
+                        android:background="@color/dark2"
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tv_description"
                         style="@style/body12"
-                        android:textColor="@color/dark2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/Separator"
                         android:layout_marginTop="@dimen/_8sdp"
-                        />
+                        android:textColor="@color/dark2" />
                 </RelativeLayout>
             </RelativeLayout>
         </ScrollView>

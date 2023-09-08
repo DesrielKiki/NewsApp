@@ -35,9 +35,7 @@ class HomeFragment : Fragment() {
 
         return binding.root
     }
-    private fun setData(newsResponse: NewsResponse) {
-        newsAdapter.submitList(newsResponse.data)
-    }
+
 
     private fun dataProcessing() {
         viewModel.getNewsData()
@@ -61,4 +59,9 @@ class HomeFragment : Fragment() {
         }
 
     }
+
+    private fun setData(newsResponse: NewsResponse) {
+        newsAdapter.submitList(newsResponse.data)
+    }
+
 }

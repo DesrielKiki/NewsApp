@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import desriel.kiki.newsapp.model.DetailResponse
+import desriel.kiki.newsapp.model.NewsData
 import desriel.kiki.newsapp.model.NewsResponse
 import desriel.kiki.newsapp.networking.ApiConfig
 import retrofit2.Call
@@ -15,6 +16,8 @@ class MainViewModel : ViewModel() {
 
     private val _newsData = MutableLiveData<NewsResponse>()
     val newsData: LiveData<NewsResponse> get() = _newsData
+
+     val allNewsList = MutableLiveData<List<NewsData>>()
 
     private val _detailData = MutableLiveData<DetailResponse>()
     val detailData: LiveData<DetailResponse> get() = _detailData
@@ -41,6 +44,11 @@ class MainViewModel : ViewModel() {
                 }
                 _isLoading.value = false
                 _newsData.postValue(responseBody)
+
+                responseBody?.data?.let { newsList ->
+                    allNewsList.value = newsList.filterNotNull()
+                }
+
             }
 
             override fun onFailure(call: Call<NewsResponse>, t: Throwable) {

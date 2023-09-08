@@ -11,7 +11,8 @@ import desriel.kiki.newsapp.R
 import desriel.kiki.newsapp.databinding.ActivityDetailBinding
 import desriel.kiki.newsapp.model.DetailResponse
 import desriel.kiki.newsapp.ui.MainViewModel
-import desriel.kiki.newsapp.ui.main.MainActivity
+import desriel.kiki.newsapp.ui.main.activity.MainActivity
+import desriel.kiki.newsapp.util.getTimeAgo
 
 class DetailActivity : AppCompatActivity() {
 
@@ -103,16 +104,18 @@ class DetailActivity : AppCompatActivity() {
             binding.shimmerContainer.visibility = View.GONE
             binding.shimmerContainer.stopShimmer()
             binding.ivNewsThumbnail.visibility = View.VISIBLE
+            binding.Separator.visibility = View.VISIBLE
             setDetailContent(detailData)
 
         }
     }
 
-    private fun setDetailContent(newsData: DetailResponse) {
-        newsData.data.let { detailData ->
+    private fun setDetailContent(detailData: DetailResponse) {
+        detailData.data.let { detailData ->
             binding.tvNewsCategory.text = "${detailData?.newsCategory?.title}"
             binding.tvNewsTitle.text = "${detailData?.title}"
-            binding.tvNewsCreatedDate.text = "${detailData?.createdAt}"
+            val createdTime = detailData?.createdAt?.getTimeAgo()
+            binding.tvNewsCreatedDate.text = "$createdTime"
             binding.tvDescription.text = "${detailData?.content}"
 
             this.let {
