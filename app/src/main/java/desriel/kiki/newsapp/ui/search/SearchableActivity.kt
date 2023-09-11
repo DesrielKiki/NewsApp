@@ -1,27 +1,24 @@
 package desriel.kiki.newsapp.ui.search
 
-import android.app.SearchManager
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
-import androidx.appcompat.widget.SearchView
-
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import desriel.kiki.newsapp.databinding.ActivitySearchableBinding
 import desriel.kiki.newsapp.model.NewsData
 import desriel.kiki.newsapp.model.NewsResponse
 import desriel.kiki.newsapp.ui.MainViewModel
 import desriel.kiki.newsapp.ui.main.activity.MainActivity
-import desriel.kiki.newsapp.ui.main.home.NewsAdapter
 import desriel.kiki.newsapp.ui.main.popular.PopularAdapter
 
 class SearchableActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySearchableBinding
-    private lateinit var newsAdapter: NewsAdapter
+    private lateinit var searchAdapter: SearchAdapter
     private lateinit var popularAdapter: PopularAdapter
 
     private val filteredNewsList = ArrayList<NewsData>()
@@ -32,12 +29,15 @@ class SearchableActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySearchableBinding.inflate(layoutInflater)
         val view = binding.root
+/*
         if (Intent.ACTION_SEARCH == intent.action) {
             intent.getStringExtra(SearchManager.QUERY)?.also { query ->
             }
         }
-        newsAdapter = NewsAdapter()
+*/
+        searchAdapter = SearchAdapter()
         popularAdapter = PopularAdapter()
+        Log.d("searchable activity", " ${binding.rvPopular.visibility}")
 
 
         binding.rvPopular.visibility = View.VISIBLE
@@ -91,10 +91,12 @@ class SearchableActivity : AppCompatActivity() {
                 binding.tvStatus.visibility = View.VISIBLE
                 binding.rvSearchResult.visibility = View.GONE
                 binding.rvPopular.visibility = View.GONE
+                binding.suggestion.visibility = View.GONE
                 binding.tvStatus.text = "No News Found"
             }
         } else {
             binding.rvPopular.visibility = View.GONE
+            binding.suggestion.visibility = View.GONE
             binding.rvSearchResult.visibility = View.VISIBLE
         }
     }
@@ -145,19 +147,21 @@ class SearchableActivity : AppCompatActivity() {
 
     private fun initPopularResult(newsResponse: NewsResponse) {
         binding.rvPopular.visibility = View.VISIBLE
+        binding.suggestion.visibility = View.VISIBLE
         binding.rvPopular.adapter = popularAdapter
         binding.rvPopular.layoutManager = LinearLayoutManager(this)
         popularAdapter.submitList(newsResponse.data)
         popularShow = true
         binding.rvSearchResult.visibility = View.GONE
         Log.d("searchable activity", " popular result initialized")
+        Log.d("searchable activity", " ${binding.rvPopular.visibility}")
     }
 
     private fun initSearchResult() {
         binding.rvSearchResult.visibility = View.VISIBLE
-        binding.rvSearchResult.adapter = newsAdapter
+        binding.rvSearchResult.adapter = searchAdapter
         binding.rvSearchResult.layoutManager = LinearLayoutManager(this)
-        newsAdapter.submitList(filteredNewsList)
+        searchAdapter.submitList(filteredNewsList)
     }
 
     private fun navigateBackFunction() {

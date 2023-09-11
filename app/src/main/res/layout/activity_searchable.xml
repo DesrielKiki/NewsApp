@@ -5,15 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_alignParentTop="true">
+
     <TextView
         android:id="@+id/tv_status"
+        style="@style/interExtraBoldHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="no news available"
-        android:visibility="gone"
         android:layout_centerInParent="true"
-        style="@style/interExtraBoldHeader"
-        android:textColor="@color/dark2"/>
+        android:text="no news available"
+        android:textColor="@color/dark2"
+        android:visibility="gone" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -40,12 +41,12 @@
                 <androidx.appcompat.widget.SearchView
                     android:id="@+id/searchView"
                     android:layout_width="match_parent"
-                    android:background="@drawable/bg_outline2"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_8sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:layout_marginBottom="@dimen/_8sdp"
                     android:layout_toEndOf="@id/toolbar"
+                    android:background="@drawable/bg_outline2"
                     android:elevation="@dimen/_5sdp"
                     app:iconifiedByDefault="false"
                     app:queryBackground="@android:color/transparent"
@@ -55,6 +56,61 @@
         </com.google.android.material.appbar.AppBarLayout>
 
 
+        <RelativeLayout
+            android:id="@+id/suggestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/top_app_bar"
+            android:layout_marginStart="@dimen/_8sdp">
+
+            <TextView
+                android:id="@+id/tv_popularTopic_header"
+                style="@style/interbold14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_4sdp"
+                android:text="Popular Topic"
+                android:textColor="@color/dark2" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_popularTopic_header">
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Politik" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="bencana" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="kuliner" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView
+                android:id="@+id/tv_popularNews_header"
+                style="@style/interbold14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/chip_group"
+                android:layout_margin="@dimen/_4sdp"
+                android:text="Popular News"
+                android:textColor="@color/dark2" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_popular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_popularNews_header"
+                tools:listitem="@layout/popular_item" />
+        </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_searchResult"
@@ -62,14 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/top_app_bar"
             android:visibility="gone"
-            android:layout_weight="1"
             tools:listitem="@layout/news_item" />
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_popular"
-            android:layout_width="match_parent"
-            android:layout_below="@id/top_app_bar"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            tools:listitem="@layout/popular_item" />
+
     </RelativeLayout>
 </RelativeLayout>

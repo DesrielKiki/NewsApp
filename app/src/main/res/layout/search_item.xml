@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_newsTitle"
+        style="@style/interBold12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:layout_toStartOf="@id/iv_newsThumbnail"
+        android:text="ini judul berita"
+        android:textColor="@color/dark2" />
+
+    <TextView
+        android:id="@+id/tv_newsInfo"
+        style="@style/inter8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_newsTitle"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:text="ini katergori - 5 hari yang lalu"
+        android:textColor="@color/dark2" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_newsThumbnail"
+        android:layout_width="@dimen/_64sdp"
+        android:layout_height="@dimen/_64sdp"
+        android:layout_alignParentTop="true"
+
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:scaleType="centerCrop" />
+
+    <View
+        android:id="@+id/Separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/iv_newsThumbnail"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:background="@color/dark2" />
+
+
+</RelativeLayout>
