@@ -43,6 +43,11 @@ class DetailActivity : AppCompatActivity() {
 
         toolBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
+
+                /**
+                 * bookmark function
+                 */
+
                 R.id.menu_bookmark -> {
                     // Toggle the state and update the icon accordingly
                     isBookmarked = !isBookmarked // Invert the bookmark state
@@ -57,6 +62,9 @@ class DetailActivity : AppCompatActivity() {
                     true // Return true to indicate that the menu item click is handled
                 }
 
+                /**
+                 * share function
+                 */
                 R.id.menu_share -> {
                     val sharingIntent = Intent(Intent.ACTION_SEND)
                     sharingIntent.type = "text/plain"
@@ -71,10 +79,9 @@ class DetailActivity : AppCompatActivity() {
                 else -> false // Handle other menu items (if any)
             }
         }
-        navigateBackFunction()
-    }
-
-    private fun navigateBackFunction() {
+        /**
+         * navigate back function
+         */
         toolBar.setNavigationOnClickListener {
             val intent = Intent(this@DetailActivity, MainActivity::class.java)
             this.startActivity(intent)

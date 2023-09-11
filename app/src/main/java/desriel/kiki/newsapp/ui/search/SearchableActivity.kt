@@ -29,12 +29,12 @@ class SearchableActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySearchableBinding.inflate(layoutInflater)
         val view = binding.root
-/*
-        if (Intent.ACTION_SEARCH == intent.action) {
-            intent.getStringExtra(SearchManager.QUERY)?.also { query ->
-            }
-        }
-*/
+        /*
+                if (Intent.ACTION_SEARCH == intent.action) {
+                    intent.getStringExtra(SearchManager.QUERY)?.also { query ->
+                    }
+                }
+        */
         searchAdapter = SearchAdapter()
         popularAdapter = PopularAdapter()
         Log.d("searchable activity", " ${binding.rvPopular.visibility}")
@@ -45,7 +45,6 @@ class SearchableActivity : AppCompatActivity() {
             initPopularResult(it)
         }
         binding.searchView.requestFocus()
-        newsDataProcessing()
         navigateBackFunction()
         searchFunction()
         popularDataProcessing()
@@ -99,25 +98,6 @@ class SearchableActivity : AppCompatActivity() {
             binding.suggestion.visibility = View.GONE
             binding.rvSearchResult.visibility = View.VISIBLE
         }
-    }
-
-
-    private fun newsDataProcessing() {
-        viewModel.getNewsData()
-
-        viewModel.isLoading.observe(this) {
-            Log.d("search activity", "wait still loading")
-        }
-        viewModel.isError.observe(
-            this
-        ) {
-            if (it) {
-                Log.d("search activity", "error found")
-            }
-        }
-        viewModel.newsData.observe(this) {
-        }
-
     }
 
     private fun popularDataProcessing() {
