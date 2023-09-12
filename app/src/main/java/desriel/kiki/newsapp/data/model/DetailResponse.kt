@@ -1,4 +1,4 @@
-package desriel.kiki.newsapp.model
+package desriel.kiki.newsapp.data.model
 
 import com.google.gson.annotations.SerializedName
 

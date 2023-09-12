@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import desriel.kiki.newsapp.databinding.FragmentPopularBinding
-import desriel.kiki.newsapp.model.NewsResponse
+import desriel.kiki.newsapp.data.model.NewsResponse
 import desriel.kiki.newsapp.ui.MainViewModel
 
 class PopularFragment : Fragment() {

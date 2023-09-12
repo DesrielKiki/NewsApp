@@ -9,8 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import desriel.kiki.newsapp.databinding.ActivitySearchableBinding
-import desriel.kiki.newsapp.model.NewsData
-import desriel.kiki.newsapp.model.NewsResponse
+import desriel.kiki.newsapp.data.model.NewsData
+import desriel.kiki.newsapp.data.model.NewsResponse
 import desriel.kiki.newsapp.ui.MainViewModel
 import desriel.kiki.newsapp.ui.main.activity.MainActivity
 import desriel.kiki.newsapp.ui.main.popular.PopularAdapter

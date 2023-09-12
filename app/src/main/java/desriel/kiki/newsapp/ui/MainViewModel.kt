@@ -3,10 +3,10 @@ package desriel.kiki.newsapp.ui
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import desriel.kiki.newsapp.model.DetailResponse
-import desriel.kiki.newsapp.model.NewsData
-import desriel.kiki.newsapp.model.NewsResponse
-import desriel.kiki.newsapp.networking.ApiConfig
+import desriel.kiki.newsapp.data.model.DetailResponse
+import desriel.kiki.newsapp.data.model.NewsData
+import desriel.kiki.newsapp.data.model.NewsResponse
+import desriel.kiki.newsapp.data.networking.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

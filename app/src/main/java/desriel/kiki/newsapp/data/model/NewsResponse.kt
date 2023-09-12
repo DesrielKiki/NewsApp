@@ -1,4 +1,4 @@
-package desriel.kiki.newsapp.model
+package desriel.kiki.newsapp.data.model
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
@@ -16,7 +16,7 @@ data class NewsResponse(
 	@field:SerializedName("message")
 	val message: String? = null,
 
-):Parcelable
+	):Parcelable
 
 @Parcelize
 data class NewsCategory(

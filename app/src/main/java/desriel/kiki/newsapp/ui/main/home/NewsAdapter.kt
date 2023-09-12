@@ -1,20 +1,19 @@
 package desriel.kiki.newsapp.ui.main.home
 
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import desriel.kiki.newsapp.databinding.NewsItemBinding
-import desriel.kiki.newsapp.model.NewsData
+import desriel.kiki.newsapp.data.model.NewsData
+import desriel.kiki.newsapp.databinding.ItemNewsBinding
 import desriel.kiki.newsapp.ui.detail.DetailActivity
 import desriel.kiki.newsapp.util.getTimeAgo
 
 class NewsAdapter : ListAdapter<NewsData, NewsAdapter.ViewHolder>(NewsDiffCallback()) {
-    inner class ViewHolder(private val binding: NewsItemBinding) :
+    inner class ViewHolder(private val binding: ItemNewsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(newsData: NewsData) {
             binding.tvNewsTitle.text = newsData.title
@@ -32,7 +31,7 @@ class NewsAdapter : ListAdapter<NewsData, NewsAdapter.ViewHolder>(NewsDiffCallba
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = NewsItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemNewsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 

@@ -7,9 +7,11 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.google.android.material.snackbar.Snackbar
 import desriel.kiki.newsapp.R
+import desriel.kiki.newsapp.data.model.BookmarkData
+import desriel.kiki.newsapp.data.model.DetailResponse
 import desriel.kiki.newsapp.databinding.ActivityDetailBinding
-import desriel.kiki.newsapp.model.DetailResponse
 import desriel.kiki.newsapp.ui.MainViewModel
 import desriel.kiki.newsapp.ui.main.activity.MainActivity
 import desriel.kiki.newsapp.util.getTimeAgo
@@ -19,9 +21,17 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
 
 
-    private val viewModel: MainViewModel by viewModels()
+    private val detailViewModel: DetailViewModel by viewModels()
+    private val mainViewModel: MainViewModel by viewModels()
     private var newsId: String? = ""
+    private var newsTitle: String? = null
+    private var createdAt: String? = null
+    private var newsCategory: String? = null
+    private var content: String? = null
+    private var thumb: String? = null
     private lateinit var toolBar: androidx.appcompat.widget.Toolbar
+
+    private var isBookmarked: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +42,8 @@ class DetailActivity : AppCompatActivity() {
         val receivedData = intent.getStringExtra("news id")
         newsId = receivedData
         Log.d("detail activity", "received data = $receivedData")
+        checkBookmarkStatus()
+
         dataProcessing()
         toolBarFunction()
         setContentView(view)
@@ -39,7 +51,6 @@ class DetailActivity : AppCompatActivity() {
 
 
     private fun toolBarFunction() {
-        var isBookmarked = false
 
         toolBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
@@ -49,22 +60,41 @@ class DetailActivity : AppCompatActivity() {
                  */
 
                 R.id.menu_bookmark -> {
-                    // Toggle the state and update the icon accordingly
-                    isBookmarked = !isBookmarked // Invert the bookmark state
+                    checkBookmarkStatus()
+                    val bookmarkedNews = BookmarkData(
+                        0L,
+                        newsId,
+                        newsTitle,
+                        createdAt,
+                        newsCategory,
+                        content,
+                        thumb,
+                        true
+                    )
+                    if (!isBookmarked) {
+                        menuItem.setIcon(R.drawable.ic_bookmarkfilled)
+                        detailViewModel.insertBookmark(bookmarkedNews)
 
-                    if (isBookmarked) {
-                        menuItem.setIcon(R.drawable.ic_bookmarkfilled) // Bookmarked icon
-                        // Perform bookmarking logic here if needed
+                        val rootView = findViewById<View>(android.R.id.content)
+                        Snackbar.make(rootView, "content bookmarked successfully", Snackbar.LENGTH_SHORT)
+                            .show()
+
                     } else {
-                        menuItem.setIcon(R.drawable.ic_bookmark) // Unbookmarked icon
-                        // Perform unbookmarking logic here if needed
+                        menuItem.setIcon(R.drawable.ic_bookmark)
+                        detailViewModel.deleteBookmark(newsId)
+                        val rootView = findViewById<View>(android.R.id.content)
+                        Snackbar.make(rootView, "content deleted from bookmark", Snackbar.LENGTH_SHORT)
+                            .show()
+
+
                     }
-                    true // Return true to indicate that the menu item click is handled
+                    true
                 }
 
                 /**
                  * share function
                  */
+
                 R.id.menu_share -> {
                     val sharingIntent = Intent(Intent.ACTION_SEND)
                     sharingIntent.type = "text/plain"
@@ -91,22 +121,22 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun dataProcessing() {
-        Log.d("detail fragment", "before processing error = ${viewModel.isError.value}")
-        viewModel.getDetailData(newsId)
+        Log.d("detail fragment", "before processing error = ${mainViewModel.isError.value}")
+        mainViewModel.getDetailData(newsId)
 
-        viewModel.isLoading.observe(this) {
+        mainViewModel.isLoading.observe(this) {
             if (it) binding.shimmerContainer.visibility = View.VISIBLE
             if (it) binding.shimmerContainer.startShimmer()
 
         }
-        viewModel.isError.observe(this) {
+        mainViewModel.isError.observe(this) {
             if (it) {
-                binding.tvStatus.text = viewModel.errorMessage
-                Log.d("detail fragment", "after processing error = ${viewModel.isError.value}")
+                binding.tvStatus.text = mainViewModel.errorMessage
+                Log.d("detail fragment", "after processing error = ${mainViewModel.isError.value}")
 
             }
         }
-        viewModel.detailData.observe(this) { detailData ->
+        mainViewModel.detailData.observe(this) { detailData ->
             binding.tvStatus.visibility = View.INVISIBLE
             binding.shimmerContainer.visibility = View.GONE
             binding.shimmerContainer.stopShimmer()
@@ -130,6 +160,33 @@ class DetailActivity : AppCompatActivity() {
                     .load("https://tamasya.technice.id/${detailData?.thumb}")
                     .into(binding.ivNewsThumbnail)
             }
+
+            newsTitle = detailData?.title
+            createdAt = detailData?.createdAt
+            newsCategory = detailData?.newsCategory?.title
+            content = detailData?.content
+            thumb = detailData?.thumb
+
+
+        }
+    }
+    private fun checkBookmarkStatus(){
+        val bookmarkData = detailViewModel.getBookmarkByNewsId(newsId)
+        bookmarkData.observe(this) {
+            isBookmarked = it != null
+            updateUIBasedOnBookmarkStatus()
+        }
+        Log.d("detail activity", "bookmark status = $isBookmarked")
+    }
+
+    private fun updateUIBasedOnBookmarkStatus() {
+        val menu = toolBar.menu
+        val bookmarkMenuItem = menu.findItem(R.id.menu_bookmark)
+        Log.d("detail activity", "bookmark status = $isBookmarked")
+        if (isBookmarked) {
+            bookmarkMenuItem.setIcon(R.drawable.ic_bookmarkfilled)
+        } else {
+            bookmarkMenuItem.setIcon(R.drawable.ic_bookmark)
         }
     }
 }

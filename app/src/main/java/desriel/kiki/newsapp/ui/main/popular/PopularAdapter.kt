@@ -4,12 +4,11 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import desriel.kiki.newsapp.databinding.PopularItemBinding
-import desriel.kiki.newsapp.model.NewsData
+import desriel.kiki.newsapp.databinding.ItemPopularBinding
+import desriel.kiki.newsapp.data.model.NewsData
 import desriel.kiki.newsapp.ui.detail.DetailActivity
 import desriel.kiki.newsapp.util.getTimeAgo
 
@@ -17,7 +16,7 @@ class PopularAdapter :
     androidx.recyclerview.widget.ListAdapter<NewsData, PopularAdapter.ViewHolder>(
         PopularDiffCallback()
     ) {
-    inner class ViewHolder(private val binding: PopularItemBinding) :
+    inner class ViewHolder(private val binding: ItemPopularBinding) :
         RecyclerView.ViewHolder(binding.root) {
             fun bind(newsData: NewsData){
                 binding.tvPopTitle.text = newsData.title
@@ -43,7 +42,7 @@ class PopularAdapter :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = PopularItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemPopularBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 

@@ -7,13 +7,13 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import desriel.kiki.newsapp.databinding.SearchItemBinding
-import desriel.kiki.newsapp.model.NewsData
+import desriel.kiki.newsapp.databinding.ItemSearchBinding
+import desriel.kiki.newsapp.data.model.NewsData
 import desriel.kiki.newsapp.ui.detail.DetailActivity
 import desriel.kiki.newsapp.util.getTimeAgo
 
 class SearchAdapter : ListAdapter<NewsData, SearchAdapter.ViewHolder>(NewsDiffCallback()) {
-    inner class ViewHolder(private val binding: SearchItemBinding) :
+    inner class ViewHolder(private val binding: ItemSearchBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(newsData: NewsData) {
             binding.tvNewsTitle.text = newsData.title
@@ -31,7 +31,7 @@ class SearchAdapter : ListAdapter<NewsData, SearchAdapter.ViewHolder>(NewsDiffCa
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = SearchItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemSearchBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 

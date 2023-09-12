@@ -80,5 +80,13 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.14.2")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.14.2")
 
+    //shimmer
     implementation ("com.facebook.shimmer:shimmer:0.5.0")
+
+    //room database
+    implementation ("androidx.room:room-runtime:2.5.2")
+    kapt ("androidx.room:room-compiler:2.5.2")
+    implementation ("androidx.room:room-ktx:2.5.2")
+    androidTestImplementation ("androidx.room:room-testing:2.5.2")
+
 }

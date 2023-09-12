@@ -109,7 +109,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_popularNews_header"
-                tools:listitem="@layout/popular_item" />
+                tools:listitem="@layout/item_popular" />
         </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -118,7 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/top_app_bar"
             android:visibility="gone"
-            tools:listitem="@layout/news_item" />
+            tools:listitem="@layout/item_news" />
 
     </RelativeLayout>
 </RelativeLayout>

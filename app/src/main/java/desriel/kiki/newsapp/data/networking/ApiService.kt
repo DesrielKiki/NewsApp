@@ -1,8 +1,7 @@
-package desriel.kiki.newsapp.networking
+package desriel.kiki.newsapp.data.networking
 
-import desriel.kiki.newsapp.model.DetailResponse
-import desriel.kiki.newsapp.model.NewsData
-import desriel.kiki.newsapp.model.NewsResponse
+import desriel.kiki.newsapp.data.model.DetailResponse
+import desriel.kiki.newsapp.data.model.NewsResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

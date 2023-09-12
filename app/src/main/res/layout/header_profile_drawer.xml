@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/side_nav_bar"
+    android:padding="16dp"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:layout_height="@dimen/_128sdp">
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_profilePicture"
+        android:layout_width="@dimen/_64sdp"
+
+        android:layout_height="@dimen/_64sdp"
+        android:src="@drawable/ic_profile_circle"/>
+    <TextView
+        android:id="@+id/tv_profileName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="desriel kiki"
+        style="@style/interBoldHeader"
+        android:layout_below="@id/iv_profilePicture"/>
+</RelativeLayout>

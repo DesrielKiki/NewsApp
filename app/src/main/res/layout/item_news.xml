@@ -6,7 +6,7 @@
 
         <variable
             name="newsData"
-            type="desriel.kiki.newsapp.model.NewsData" />
+            type="desriel.kiki.newsapp.data.model.NewsData" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -45,19 +45,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:textColor="@color/dark2"
-                    android:maxLines="1"
-                    android:text="-------------------------------------------"
                     android:layout_marginEnd="@dimen/_10sdp"
-                    android:background="@color/dark2"/>
+                    android:maxLines="2"/>
                 <TextView
                     android:id="@+id/tv_newsInfo"
-                    style="@style/interBold12"
+                    style="@style/inter8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_newsTitle"
-                    android:background="@color/dark2"
-                    android:textColor="@color/dark2"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginBottom="@dimen/_10sdp"

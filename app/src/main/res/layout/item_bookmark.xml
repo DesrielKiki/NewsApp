@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_2sdp"
+    android:layout_marginBottom="@dimen/_2sdp"
+    android:background="@drawable/bg_fill_dark2"
+
+    android:padding="@dimen/_4sdp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_newsThumbnail"
+        android:layout_width="@dimen/_64sdp"
+        android:scaleType="centerCrop"
+        android:layout_height="@dimen/_64sdp"
+        android:background="@drawable/bg_image" />
+
+    <TextView
+        android:id="@+id/tv_newsTitle"
+        style="@style/interBold12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_toEndOf="@id/iv_newsThumbnail"
+        android:text="ini judul berita"
+
+        />
+
+    <TextView
+        android:id="@+id/tv_description"
+        style="@style/inter12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_newsTitle"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_toEndOf="@id/iv_newsThumbnail"
+        android:text="ini deskripsi" />
+
+    <TextView
+        android:id="@+id/tv_newsInfo"
+        style="@style/inter12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_description"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_toEndOf="@id/iv_newsThumbnail"
+        android:text="politik - 2 hari yang lalu" />
+
+    <ImageView
+        android:id="@+id/btn_bookmark"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/ic_bookmarkfilled"/>
+</RelativeLayout>

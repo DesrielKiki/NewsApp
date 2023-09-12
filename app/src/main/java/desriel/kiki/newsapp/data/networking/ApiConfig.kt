@@ -1,4 +1,4 @@
-package desriel.kiki.newsapp.networking
+package desriel.kiki.newsapp.data.networking
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

@@ -17,13 +17,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <include layout="@layout/popular_item_shimmer" />
-            <include layout="@layout/popular_item_shimmer" />
-            <include layout="@layout/popular_item_shimmer" />
-            <include layout="@layout/popular_item_shimmer" />
-            <include layout="@layout/popular_item_shimmer" />
-            <include layout="@layout/popular_item_shimmer" />
-            <include layout="@layout/popular_item_shimmer" />
+            <include layout="@layout/item_popular_shimmer" />
+            <include layout="@layout/item_popular_shimmer" />
+            <include layout="@layout/item_popular_shimmer" />
+            <include layout="@layout/item_popular_shimmer" />
+            <include layout="@layout/item_popular_shimmer" />
+            <include layout="@layout/item_popular_shimmer" />
+            <include layout="@layout/item_popular_shimmer" />
 
         </LinearLayout>
     </com.facebook.shimmer.ShimmerFrameLayout>
@@ -49,5 +49,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/tv_popularHeader"
-        tools:listitem="@layout/popular_item" />
+        tools:listitem="@layout/item_popular" />
 </RelativeLayout>

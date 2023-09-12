@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.drawer.bookmark.BookmarkActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/bookmark_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blue2">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/bookmark_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/ic_back"
+            app:title="META.COM"
+            app:titleCentered="true"
+            app:titleTextAppearance="@style/interExtraBoldHeader" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/tv_status"
+        style="@style/interExtraBoldHeader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="no bookmarked content"
+        android:textColor="@color/dark2" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_bookmark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bookmark_appbar"
+        tools:listitem="@layout/item_bookmark" />
+</RelativeLayout>
