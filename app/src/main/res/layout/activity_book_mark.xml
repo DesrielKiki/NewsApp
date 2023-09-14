@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:navigationIcon="@drawable/ic_back"
+            app:titleTextColor="@color/white"
             app:title="META.COM"
             app:titleCentered="true"
             app:titleTextAppearance="@style/interExtraBoldHeader" />
@@ -28,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="no bookmarked content"
+        android:text="@string/no_bookmarked_content"
         android:textColor="@color/dark2" />
 
     <androidx.recyclerview.widget.RecyclerView

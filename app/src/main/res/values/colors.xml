@@ -2,11 +2,20 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
     <color name="colorPrimary">#0A66FF</color>
-    <color name="colorPrimaryDark">#ba000d</color>
-    <color name="colorPrimaryLight">#DFE1F3</color>
-    <color name="colorPrimaryTeks">#0171DF</color>
+
+
+    <!-- Light Theme Color -->
+    <color name="colorPrimaryLight">#FFFFFFFF</color>
+    <color name="colorSecondaryLight">#0A66FF</color>
+    <color name="LightContentColor">#FF000000</color>
+
+
+    <!-- Dark Theme Color -->
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorSecondaryDark">#FFFFFFFF</color>
+    <color name="DarkContentColor">#FFFFFFFF</color>
+
     <color name="colorAccent">#54577A</color>
     <color name="colorPrimaryText">#2E2D2D</color>
     <color name="colorSecondaryText">#757575</color>
@@ -22,6 +31,8 @@
     <color name="gold">#FFD700</color>
     <color name="blue2">#0A66FF</color>
     <color name="yellow">#FFBE41</color>
+    <color name="colorPrimaryDarker">#0D47A1</color>
+
 
 
     <color name="dark">#141522</color>
@@ -37,4 +48,5 @@
     <color name="grey">#F8FAFB</color>
     <color name="pink">#B4FACECE</color>
     <color name="pink_transparan_40">#66FACECE</color>
+
 </resources>

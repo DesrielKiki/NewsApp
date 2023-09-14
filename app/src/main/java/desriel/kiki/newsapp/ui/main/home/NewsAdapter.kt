@@ -16,6 +16,7 @@ class NewsAdapter : ListAdapter<NewsData, NewsAdapter.ViewHolder>(NewsDiffCallba
     inner class ViewHolder(private val binding: ItemNewsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(newsData: NewsData) {
+
             binding.tvNewsTitle.text = newsData.title
             val dateText = newsData.createdAt?.getTimeAgo()
             val infoText = "${newsData.newsCategory?.title} - $dateText"

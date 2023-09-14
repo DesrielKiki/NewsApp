@@ -32,7 +32,7 @@
                     app:menu="@menu/home_menu"
                     app:title="META.COM"
                     app:titleTextAppearance="@style/interExtraBoldHeader"
-                    app:titleTextColor="@color/blue2" />
+                    app:titleTextColor="?colorSecondary" />
                 <!-- SearchBar -->
 
             </RelativeLayout>
@@ -55,17 +55,17 @@
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Latest" />
+                    android:text="@string/latest" />
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Popular" />
+                    android:text="@string/popular" />
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Topic" />
+                    android:text="@string/topic" />
             </com.google.android.material.tabs.TabLayout>
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -95,7 +95,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="META.COM"
+                android:text="@string/meta_com"
                 android:gravity="center"
                 android:padding="16dp" />
         </LinearLayout>

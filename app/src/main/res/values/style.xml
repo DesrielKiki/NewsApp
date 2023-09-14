@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextAppearance.LightTheme">
+        <item name="android:textColor">@color/LightContentColor</item>
+        <!-- Atur atribut-atribut lain yang Anda perlukan -->
+    </style>
+
+    <style name="TextAppearance.DarkTheme">
+        <item name="android:textColor">@color/DarkContentColor</item>
+        <!-- Atur atribut-atribut lain yang Anda perlukan -->
+    </style>
+
+    <style name="TextAppearance">TextAppereance</style>
+
+</resources>

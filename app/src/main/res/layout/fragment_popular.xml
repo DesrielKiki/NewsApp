@@ -41,8 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_30sdp"
         android:layout_marginTop="@dimen/_18sdp"
-        android:text="@string/PopularTextTitle"
-        android:textColor="@color/dark2" />
+        android:text="@string/PopularTextTitle" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_popular"

@@ -4,6 +4,9 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:textAppearance">@style/TextAppearance.LightTheme</item>
+        <item name="colorPrimary">@color/LightContentColor</item>
+        <item name="colorSecondary">@color/colorSecondaryLight</item>
     </style>
 
     <style name="Theme.NewsApp" parent="Base.Theme.NewsApp" />
@@ -161,7 +164,6 @@
     <style name="interBold12">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/white</item>
         <item name="android:fontFamily">@font/inter_bold</item>
         <item name="android:textSize">@dimen/_12ssp</item>
     </style>
@@ -169,7 +171,6 @@
     <style name="interbold14">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/white</item>
         <item name="android:fontFamily">@font/inter_bold</item>
         <item name="android:textSize">@dimen/_14ssp</item>
     </style>
@@ -177,7 +178,6 @@
     <style name="inter8">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/_8ssp</item>
         <item name="android:fontFamily">@font/inter</item>
     </style>
@@ -185,7 +185,6 @@
     <style name="inter12">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/_12ssp</item>
         <item name="android:fontFamily">@font/inter</item>
     </style>
@@ -193,7 +192,6 @@
     <style name="interBold10">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/_10ssp</item>
         <item name="android:fontFamily">@font/inter_bold</item>
     </style>
@@ -201,7 +199,6 @@
     <style name="interBoldHeader">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/_20ssp</item>
         <item name="android:fontFamily">@font/inter_bold</item>
     </style>
@@ -209,7 +206,6 @@
     <style name="interExtraBoldHeader">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/_20ssp</item>
         <item name="android:fontFamily">@font/inter_extrabold</item>
     </style>

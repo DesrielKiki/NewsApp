@@ -1,4 +1,4 @@
-package desriel.kiki.newsapp.data
+package desriel.kiki.newsapp.data.room
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
@@ -9,6 +9,10 @@ import desriel.kiki.newsapp.data.model.BookmarkData
 
 @Dao
 interface NewsDao {
+    /**
+     * bookmark function
+     **/
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insertBookmark(bookmarkData: BookmarkData)
     @Query("DELETE FROM table_bookmark WHERE newsId IN (:newsId)")

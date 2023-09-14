@@ -11,4 +11,17 @@
     <string name="share">share</string>
     <string name="search_menu">Search</string>
     <string name="PopularTextTitle">Popular This Week :</string>
+    <string name="no_bookmarked_content">no bookmarked content</string>
+    <string name="latest">Latest</string>
+    <string name="popular">Popular</string>
+    <string name="topic">Topic</string>
+    <string name="meta_com">META.COM</string>
+    <string name="no_news_available">no news available</string>
+    <string name="popular_topic">Popular Topic</string>
+    <string name="popular_news">Popular News</string>
+    <string name="preferences">Preferences</string>
+    <string name="customize_your_experience_on_news_app">Customize your experience on News App</string>
+    <string name="application_themes">Application themes</string>
+    <string name="language">Language</string>
+    <string name="search_for_news_here">Search for news here</string>
 </resources>

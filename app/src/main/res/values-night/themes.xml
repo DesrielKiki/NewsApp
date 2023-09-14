@@ -3,6 +3,11 @@
     <style name="Base.Theme.NewsApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
-        <item name="android:statusBarColor">@color/dark_transparant</item>
+        <item name="android:statusBarColor">@color/dark</item>
+        <item name="colorPrimary">@color/DarkContentColor</item>
+        <item name="colorSecondary">@color/colorSecondaryDark</item>
+        <item name="android:windowBackground">@color/dark</item>
+        <item name="android:textAppearance">@style/TextAppearance.DarkTheme</item>
+
     </style>
 </resources>

@@ -4,7 +4,7 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import desriel.kiki.newsapp.data.NewsRepository
+import desriel.kiki.newsapp.data.room.NewsRepository
 import desriel.kiki.newsapp.data.model.BookmarkData
 
 class DetailViewModel(application: Application): AndroidViewModel(application) {

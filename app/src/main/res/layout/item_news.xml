@@ -43,6 +43,7 @@
                     style="@style/interBold12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
@@ -52,10 +53,11 @@
                     style="@style/inter8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
-                    android:text="Meta news - 5 menit yang lalu" />
+                    android:text="" />
             </LinearLayout>
         </LinearLayout>
 

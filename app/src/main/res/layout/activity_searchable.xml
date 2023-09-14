@@ -12,8 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="no news available"
-        android:textColor="@color/dark2"
+        android:text="@string/no_news_available"
         android:visibility="gone" />
 
     <RelativeLayout
@@ -50,7 +49,7 @@
                     android:elevation="@dimen/_5sdp"
                     app:iconifiedByDefault="false"
                     app:queryBackground="@android:color/transparent"
-                    app:queryHint="cari berita disini" />
+                    app:queryHint="@string/search_for_news_here" />
             </RelativeLayout>
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -69,8 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_4sdp"
-                android:text="Popular Topic"
-                android:textColor="@color/dark2" />
+                android:text="@string/popular_topic" />
 
             <com.google.android.material.chip.ChipGroup
                 android:id="@+id/chip_group"
@@ -101,8 +99,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/chip_group"
                 android:layout_margin="@dimen/_4sdp"
-                android:text="Popular News"
-                android:textColor="@color/dark2" />
+                android:text="@string/popular_news" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_popular"

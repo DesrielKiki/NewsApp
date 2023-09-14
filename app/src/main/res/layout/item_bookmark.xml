@@ -18,33 +18,36 @@
     <TextView
         android:id="@+id/tv_newsTitle"
         style="@style/interBold12"
+        android:layout_toStartOf="@id/btn_bookmark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_4sdp"
         android:layout_toEndOf="@id/iv_newsThumbnail"
-        android:text="ini judul berita"
+        android:text=""
 
         />
 
     <TextView
         android:id="@+id/tv_description"
         style="@style/inter12"
+        android:layout_toStartOf="@id/btn_bookmark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_newsTitle"
         android:layout_marginStart="@dimen/_4sdp"
         android:layout_toEndOf="@id/iv_newsThumbnail"
-        android:text="ini deskripsi" />
+        android:text="" />
 
     <TextView
         android:id="@+id/tv_newsInfo"
         style="@style/inter12"
         android:layout_width="wrap_content"
+        android:layout_toStartOf="@id/btn_bookmark"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_description"
         android:layout_marginStart="@dimen/_4sdp"
         android:layout_toEndOf="@id/iv_newsThumbnail"
-        android:text="politik - 2 hari yang lalu" />
+        android:text="" />
 
     <ImageView
         android:id="@+id/btn_bookmark"

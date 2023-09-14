@@ -99,7 +99,7 @@ class DetailActivity : AppCompatActivity() {
                     val sharingIntent = Intent(Intent.ACTION_SEND)
                     sharingIntent.type = "text/plain"
                     val shareBody =
-                        "Check out this news!! \n https://tamasya.technice.id/api/mobile/news/$newsId"
+                        "Check out this news!! \n  https://tamasya.technice.id/api/mobile/news/$newsId"
                     sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBody)
                     startActivity(Intent.createChooser(sharingIntent, "Share via"))
 
@@ -137,6 +137,7 @@ class DetailActivity : AppCompatActivity() {
             }
         }
         mainViewModel.detailData.observe(this) { detailData ->
+
             binding.tvStatus.visibility = View.INVISIBLE
             binding.shimmerContainer.visibility = View.GONE
             binding.shimmerContainer.stopShimmer()

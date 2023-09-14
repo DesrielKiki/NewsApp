@@ -1,5 +1,6 @@
 package desriel.kiki.newsapp.ui
 
+import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -43,7 +44,7 @@ class MainViewModel : ViewModel() {
                     onError("data processing error")
                 }
                 _isLoading.value = false
-                _newsData.postValue(responseBody)
+                _newsData.postValue(responseBody!!)
 
                 responseBody?.data?.let { newsList ->
                     allNewsList.value = newsList.filterNotNull()
@@ -72,7 +73,7 @@ class MainViewModel : ViewModel() {
                     onError("data processing error")
                 }
                 _isLoading.value = false
-                _detailData.postValue(responseBody)
+                _detailData.postValue(responseBody!!)
             }
 
             override fun onFailure(call: Call<DetailResponse>, t: Throwable) {
@@ -93,4 +94,12 @@ class MainViewModel : ViewModel() {
         _isError.value = true
         _isLoading.value = false
     }
+    fun <T> emptyDatabaseView(data: List<T>, view: View) {
+        when (data.isEmpty()) {
+            true -> view.visibility = View.VISIBLE
+            else -> view.visibility = View.INVISIBLE
+        }
+    }
+
+
 }

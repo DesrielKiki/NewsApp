@@ -11,8 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_17sdp"
-        android:text="#1"
-        android:textColor="@color/dark2" />
+        android:text="#1" />
 
     <RelativeLayout
         android:id="@+id/bg_content"
@@ -37,14 +36,12 @@
             android:layout_marginEnd="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_10sdp"
             android:layout_toStartOf="@id/bg_thumb"
-            android:text="Keluarga sambo sampaikan bahwa lesti bilar pasangan yang serasi karna selalu bergandeng badan"
-            android:textColor="@color/dark2" />
+            android:text="Keluarga sambo sampaikan bahwa lesti bilar pasangan yang serasi karna selalu bergandeng badan" />
         <TextView
             android:id="@+id/tv_info"
             android:layout_width="wrap_content"
             style="@style/inter8"
-            android:textColor="@color/dark2"
-            android:text="meqi news - 4 jam yang lalu"
+            android:text=""
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="@dimen/_10sdp"

@@ -1,4 +1,4 @@
-package desriel.kiki.newsapp.data
+package desriel.kiki.newsapp.data.room
 
 import android.content.Context
 import androidx.room.Database
